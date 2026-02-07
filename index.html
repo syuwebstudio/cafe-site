@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- ★これが超重要（スマホ対応スイッチ） -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>OOカフェ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>OOカフェ</h1>
+
+  <button id="hamburger" class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+ <nav id="nav">
+  <ul>
+    <li><a href="#top">Home</a></li>
+    <li><a href="#concept">Concept</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#access">Access</a></li>
+  </ul>
+</nav>
+</header>
+
+<div id="overlay"></div>
+
+  <main>
+
+    <section class="hero" id="top">
+  <h2>ほっと一息つける、街角カフェ</h2>
+  <p>こだわりのコーヒーと、落ち着いた時間を。</p>
+
+  <a href="#menu" class="hero-btn">メニューを見る</a>
+</section>
+
+    <section id="concept">
+  <h2>コンセプト</h2>
+  <p>お店の想い</p>
+  
+  <p>ここに文章を入れます。</p>
+  <p>ここに文章を入れます。</p>
+  <p>ここに文章を入れます。</p>
+  <p>ここに文章を入れます。</p>
+  <p>ここに文章を入れます。</p>
+</section>
+
+   <section id="menu">
+  <h2>メニュー紹介</h2>
+</section>
+
+<section id="access">
+  <h2>アクセス情報</h2>
+</section>
+
+  </main>
+
+  <footer>
+    フッター（コピーライト）
+  </footer>
+  <script>
+const hamburger = document.getElementById("hamburger");
+const nav = document.getElementById("nav");
+const overlay = document.getElementById("overlay");
+const header = document.querySelector("header");
+
+/* ハンバーガーメニュー */
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  nav.classList.toggle("active");
+  overlay.classList.toggle("active");
+  document.body.classList.toggle("menu-open");
+});
+
+document.querySelectorAll("#nav a").forEach(link => {
+  link.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    nav.classList.remove("active");
+    overlay.classList.remove("active");
+    document.body.classList.remove("menu-open");
+  });
+});
+
+overlay.addEventListener("click", () => {
+  hamburger.classList.remove("active");
+  nav.classList.remove("active");
+  overlay.classList.remove("active");
+  document.body.classList.remove("menu-open");
+});
+
+/* スクロール影 */
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 10) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+</script>
+</body>
+</html>

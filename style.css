@@ -1,0 +1,282 @@
+/* =============================
+   共通設定
+============================= */
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:sans-serif;
+  background:#f7f7f7;
+  padding-top:80px;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+/* =============================
+   ヘッダー
+============================= */
+header{
+  background:#4a2c2a;
+  color:white;
+  padding:20px;
+
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:999;
+
+  /* ⭐ 追加 */
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+header h1{
+  margin:0;
+  font-size:22px;
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:20px;
+  padding:0;
+  margin:10px 0 0;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+}
+
+nav a:hover{
+  text-decoration:underline;
+}
+
+/* =============================
+   HERO
+============================= */
+.hero{
+  height:70vh;
+  background-image:url("hero.jpg");
+  background-size:cover;
+  background-position:center;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+}
+
+.hero h2,
+.hero p{
+  position:relative;
+  color:white;
+}
+
+.hero h2{
+  font-size:36px;
+}
+
+.hero p{
+  font-size:18px;
+}
+
+.hero-btn{
+  position:relative;
+  margin-top:20px;
+  padding:12px 30px;
+  background:#cfa670;
+  color:white;
+  text-decoration:none;
+  border-radius:30px;
+}
+
+/* =============================
+   section
+============================= */
+section{
+  background:white;
+  margin:20px;
+  padding:20px;
+  scroll-margin-top:80px;
+}
+
+footer{
+  background:#333;
+  color:white;
+  text-align:center;
+  padding:10px;
+}
+
+/* =============================
+   ハンバーガー初期非表示
+============================= */
+.hamburger{
+  display:none;
+}
+
+/* =============================
+   オーバーレイ
+============================= */
+#overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+  opacity:0;
+  pointer-events:none;
+  transition:.3s;
+  z-index:9999;
+}
+
+#overlay.active{
+  opacity:1;
+  pointer-events:auto;
+  left:260px;
+  width:calc(100% - 260px);
+}
+/* =========================================
+   📱 スマホ完成版（ここ超重要）
+========================================= */
+@media (max-width:768px){
+
+body{
+  padding-top:65px;
+}
+
+body.menu-open{
+  overflow: hidden;
+}
+
+header{
+  padding:16px;
+}
+
+/* ⭐ ハンバーガー（修正版） */
+.hamburger{
+  position:absolute;
+  top:12px;
+  right:12px;
+  left:auto;
+  width:40px;
+  height:40px;
+  border:none;
+  background:none;
+  cursor:pointer;
+  display:block;
+  z-index:1001;
+}
+
+.hamburger span{
+  position:absolute;
+  left:8px;
+  width:24px;
+  height:3px;
+  background:white;
+  transition:.3s;
+}
+
+.hamburger span:nth-child(1){top:11px;}
+.hamburger span:nth-child(2){top:18px;}
+.hamburger span:nth-child(3){top:25px;}
+
+.hamburger.active span:nth-child(1){
+  transform:rotate(45deg);
+  top:18px;
+}
+.hamburger.active span:nth-child(2){
+  opacity:0;
+}
+.hamburger.active span:nth-child(3){
+  transform:rotate(-45deg);
+  top:18px;
+}
+
+.hamburger.active{
+  position: fixed;
+  top: 18px;
+  left: 18px;
+}
+
+/* スライドメニュー */
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  height:100vh;
+  width:260px;
+  background:#4a2c2a;
+  transform:translateX(-110%);
+  transition:.3s;
+  z-index:1000;
+}
+
+nav.active{
+  transform:translateX(0);
+}
+
+nav ul{
+  padding:80px 20px;
+  flex-direction:column;
+  gap:20px;
+}
+
+/* HEROスマホ最適 */
+.hero{
+  height:40vh;
+  padding:0 20px;
+}
+
+.hero h2{
+  font-size:22px;
+  line-height:1.4;
+}
+
+.hero p{
+  font-size:13px;
+}
+
+.hero-btn{
+  padding:10px 22px;
+  font-size:14px;
+}
+
+/* section余白 */
+section{
+  margin:12px;
+  padding:16px;
+}
+
+/* ===== 文字サイズ軽量化 ===== */
+
+h1{
+  font-size:22px;
+}
+
+h2{
+  font-size:20px;
+  margin-bottom:10px;
+}
+
+p{
+  font-size:14px;
+  line-height:1.6;
+}
+}
