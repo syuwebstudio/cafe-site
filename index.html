@@ -34,10 +34,11 @@
   <main>
 
     <section class="hero" id="top">
-  <h2>ほっと一息つける、街角カフェ</h2>
-  <p>こだわりのコーヒーと、落ち着いた時間を。</p>
-
-  <a href="#menu" class="hero-btn">メニューを見る</a>
+  <div class="hero-text">
+    <h2>ほっと一息つける、街角カフェ</h2>
+    <p>こだわりのコーヒーと、落ち着いた時間を。</p>
+    <a href="#menu" class="hero-btn">メニューを見る</a>
+  </div>
 </section>
 
     <section id="concept">
@@ -59,38 +60,63 @@ OOカフェは「ゆったり過ごせる時間」を大切にした小さなカ
 </section>
 
    <section id="menu">
-  <h2>メニュー紹介</h2>
-  <h3>DRINK</h3>
-<ul>
-  <li>ブレンドコーヒー　¥450</li>
-  <li>カフェラテ　¥520</li>
-  <li>カプチーノ　¥520</li>
-  <li>アイスコーヒー　¥480</li>
-</ul>
+  <h2>メニュー</h2>
 
-<h3>SWEETS</h3>
-<ul>
-  <li>自家製チーズケーキ　¥480</li>
-  <li>ガトーショコラ　¥500</li>
-  <li>季節のタルト　¥520</li>
-</ul>
+  <div class="menu-grid">
 
-<h3>FOOD</h3>
-<ul>
-  <li>たまごサンド　¥600</li>
-  <li>ベーグルプレート　¥750</li>
-</ul>
+    <div class="menu-card">
+      <h3>ブレンドコーヒー</h3>
+      <p>香り高い定番の一杯</p>
+      <span>¥450</span>
+    </div>
+
+    <div class="menu-card">
+      <h3>カフェラテ</h3>
+      <p>まろやかなミルクの味わい</p>
+      <span>¥520</span>
+    </div>
+
+    <div class="menu-card">
+      <h3>チーズケーキ</h3>
+      <p>店内手作りの人気スイーツ</p>
+      <span>¥480</span>
+    </div>
+
+    <div class="menu-card">
+      <h3>ガトーショコラ</h3>
+      <p>濃厚チョコレートケーキ</p>
+      <span>¥500</span>
+    </div>
+
+  </div>
 </section>
-
 <section id="access">
-  <h2>アクセス情報</h2>
-</section>
+  <h2>アクセス</h2>
 
+  <p>〒000-0000</p>
+  <p>東京都〇〇区〇〇 1-2-3</p>
+  <p>JR〇〇駅 徒歩5分</p>
+
+  <p>営業時間：10:00〜19:00</p>
+  <p>定休日：水曜日</p>
+
+  <iframe 
+    src="https://maps.google.com/maps?q=tokyo&t=&z=13&ie=UTF8&iwloc=&output=embed"
+    width="100%" 
+    height="300" 
+    style="border:0;"
+    loading="lazy">
+  </iframe>
+</section>
   </main>
 
-  <footer>
-    フッター（コピーライト）
-  </footer>
+ <footer>
+  <p class="footer-logo">OOカフェ</p>
+  <small class="copyright">
+    © 2026 OO Cafe All Rights Reserved.
+  </small>
+</footer>
+
   <script>
 const hamburger = document.getElementById("hamburger");
 const nav = document.getElementById("nav");
